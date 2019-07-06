@@ -61,6 +61,7 @@
 	}
 	#wrap img{
 		width: 150px;
+		height: 200px;
 
 	}
   </style>
@@ -68,7 +69,7 @@
  <body>
  <div id="perspective">
  <div id="wrap">
-	<img src="img/1.jpg" alt="">
+	<!-- <img src="img/1.jpg" alt="">
 	<img src="img/2.jpg" alt="">
 	<img src="img/3.jpg" alt="">
     <img src="img/4.jpg" alt="">
@@ -80,13 +81,14 @@
     <img src="img/10.jpg" alt="">
 	<img src="img/11.jpg" alt="">
 	<img src="img/12.jpg" alt="">
-	<img src="img/13.jpg" alt="">
+	<img src="img/13.jpg" alt=""> -->
 	<p></P>
  </div>
  <div>
  <script type="text/javascript">
  	var MobileSystem=false;
  	GetSystemInf();
+ 	AddPhoto();
  	// 获取终端设备系统
 function GetSystemInf() {
     var u = navigator.userAgent;
@@ -96,6 +98,17 @@ function GetSystemInf() {
         MobileSystem = true;
         
     }
+}
+
+//循环添加图片
+function AddPhoto(){
+	var wrap=document.getElementById("wrap");
+    for (var i = 0; i < 14; i++) {
+    	var img=document.createElement("img");
+		img.src="img/"+i+".jpg";
+		wrap.appendChild(img);
+    }
+	
 }
 			window.onload = function(){
 				var oWrap = document.getElementById('wrap');
